@@ -1,3 +1,6 @@
+import pandas as pd
+from fundamental import get_income_statement, get_balance_sheet, get_cashflow
+
 def get_features(income_statement, balance_sheet, cash_flow):
     # profitability
     ROA = balance_sheet['Total Assets'] / income_statement['Net Income Common Stockholders']
@@ -21,7 +24,7 @@ def get_features(income_statement, balance_sheet, cash_flow):
 
     return df.iloc[:-1]
 
-if __name__ = '__main__':
+if __name__ == '__main__':
     # ticker
     symbol  = 'MSFT'
 
@@ -32,4 +35,4 @@ if __name__ = '__main__':
 
     # combine all together
     X_msft = get_features(income_statement, balance_sheet, cash_flow)
-    X_msft.head()
+    print(X_msft.head())
