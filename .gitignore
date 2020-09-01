@@ -1,0 +1,5 @@
+# Environments
+.venv
+
+# pycache
+__pycache__/
