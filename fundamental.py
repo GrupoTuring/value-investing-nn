@@ -22,9 +22,11 @@ def get_financials(url):
         columns = row.findChildren('div',recursive=False)
         line_values = list()
         for col in columns:
-            if ',' in col.text:
+            has_comma = ',' in col.text
+            is_empty = '-' in col.text and len(col.text) == 1
+            if has_comma:
                 value = float(col.text.replace(',', ''))
-            elif '-' in col.text and len(col.text) == 1:
+            elif is_empty:
                 value = np.nan
             else:
                 value = col.text
