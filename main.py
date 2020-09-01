@@ -1,5 +1,5 @@
 import pandas as pd
-from fundamental import get_income_statement, get_balance_sheet, get_cashflow
+from turingquant.support import get_income_statement, get_balance_sheet, get_cashflow
 
 def get_features(income_statement, balance_sheet, cash_flow):
     # profitability
