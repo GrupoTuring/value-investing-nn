@@ -5,4 +5,4 @@
 __pycache__/
 
 # data
-s&p500_fundamental_data.csv
+*.csv
